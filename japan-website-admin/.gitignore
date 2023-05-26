@@ -1,21 +1,9 @@
-# dependencies
-/node_modules
+# Ignore everything in this directory
 
-# IDE
-/.idea
-/.awcache
-/.vscode
+ * 
 
-# misc
-npm-debug.log
+# Except this file !
 
-# example
-/quick-start
+/logs
 
-# tests
-/test
-/coverage
-/.nyc_output
-
-# dist
-/dist
+desktop.files.json
