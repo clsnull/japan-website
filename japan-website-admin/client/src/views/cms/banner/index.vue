@@ -14,10 +14,9 @@
       stripe
       current-row-key="id"
     >
-      <template #account="{ row }">
+      <template #img="{ row }">
         <div class="user-account-wrap">
-          <el-avatar :src="row.avatar" shape="square" :size="40"></el-avatar>
-          <div style="margin-left: 10px">{{ row.account }}</div>
+          <el-image :src="row.img" style="width: 100px; height: 100px"></el-image>
         </div>
       </template>
 
@@ -59,7 +58,7 @@ const tableData = ref<IKTableProps<BannerApiResult>>({
   columns: [
     { label: '名称', prop: 'name', default: '--' },
     { label: '跳转链接', prop: 'url', default: '--' },
-    { label: '图片地址', prop: 'img', default: '--' }
+    { label: '图片地址', prop: 'img', slot: true }
   ]
 })
 
@@ -124,6 +123,7 @@ const delBtnEvent = async (row: BannerApiResult) => {
 .user-account-wrap {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 10px;
 }
 

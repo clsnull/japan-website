@@ -13,6 +13,15 @@ export interface BannerApiResult extends BaseResult {
   img?: string
 }
 
+export interface CreateBannerParams {
+  /** 名称 */
+  name?: string
+  /** 跳转url */
+  url?: string
+  /** 图片 */
+  img?: string
+}
+
 export interface UserLogin {
   account: string
   password: string
@@ -105,7 +114,7 @@ export function updateBanner(data: BannerApiResult): Promise<ResultData<null>> {
   })
 }
 
-export function createBanner(data: BannerApiResult): Promise<ResultData<null>> {
+export function createBanner(data: CreateBannerParams): Promise<ResultData<null>> {
   return request<ResultData<null>>({
     url: `${config.api.baseUrl}/banner`,
     method: ApiMethodContants.POST,

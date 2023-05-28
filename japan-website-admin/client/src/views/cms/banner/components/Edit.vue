@@ -88,12 +88,6 @@ const getBannerInfoApi = async (currId: string) => {
   }
 }
 
-// 头像编辑
-const showAvatarCropper = ref<boolean>(false)
-const avatarClickEvent = () => {
-  showAvatarCropper.value = !showAvatarCropper.value
-}
-
 const uploadSuccess = (url: string) => {
   bannerForm.value.img = url
 }
@@ -117,13 +111,21 @@ const updateOrCreate = async () => {
       loading.value = true
       let res = null
       if (props.currId === '0') {
-        res = await createBanner(bannerForm.value)
+        const params = {
+          ...bannerForm.value,
+          id: null
+        }
+        res = await createBanner(params)
       } else {
         res = await updateBanner(bannerForm.value)
       }
       loading.value = false
       if (res?.code === 200) {
-        ElMessage({ type: 'success', message: '更新成功' })
+        if (props.currId === '0') {
+          ElMessage({ type: 'success', message: '添加成功' })
+        } else {
+          ElMessage({ type: 'success', message: '更新成功' })
+        }
         emit('change')
         handleClose()
       } else {
