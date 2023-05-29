@@ -11,9 +11,12 @@
   "dependencies": {
     "core-js": "^3.25.3",
     "nuxt": "^2.15.8",
+    "swiper": "5.4",
     "vue": "^2.7.10",
+    "vue-awesome-swiper": "4.1.1",
     "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
+    "vue-template-compiler": "^2.7.10",
+    "vuejs-google-maps": "^0.2.0"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^5.3.3",

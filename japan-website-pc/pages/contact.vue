@@ -1,7 +1,7 @@
 <template>
-    <div class="flex items-center justify-center bg-gray-100 p-9">
+    <div class="flex justify-center bg-gray-100 p-9" style="min-height: calc(100vh - 5rem - 2.5rem);">
         <div class="p-6 bg-white rounded-lg shadow-md lg:container">
-            <h2 class="pb-8 text-2xl font-bold border-b border-gray-100">お問い合わせ</h2>
+            <h2 class="pb-8 text-2xl font-bold text-center border-b border-gray-100">お問い合わせ</h2>
             <form>
                 <div class="flex flex-row items-center mt-4 mb-4">
                     <label for="email" class="block w-40"
@@ -87,7 +87,7 @@
                 <div class="flex items-center justify-center mt-8">
                     <button
                         type="submit"
-                        class="w-40 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                        class="w-40 px-4 py-2 text-white rounded bg-sky-600 hover:bg-sky-500"
                     >
                         送信する
                     </button>
