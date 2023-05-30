@@ -4,7 +4,7 @@
             <h2 class="pb-8 text-2xl font-bold text-center border-b border-gray-100">お問い合わせ</h2>
             <form>
                 <div class="flex flex-row items-center mt-4 mb-4">
-                    <label for="email" class="block w-40"
+                    <label for="email" class="block w-60"
                         >お問合せ製品：</label
                     >
                     <input
@@ -14,14 +14,14 @@
                     />
                 </div>
                 <div class="flex flex-row items-center mb-4">
-                    <label for="email" class="block w-40">会社名：</label>
+                    <label for="email" class="block w-60">会社名：</label>
                     <input
                         type="text"
                         class="w-full px-3 py-2 border rounded"
                     />
                 </div>
                 <div class="flex flex-row items-center mb-4">
-                    <label for="email" class="block w-40"
+                    <label for="email" class="block w-60"
                         >担当者名：</label
                     >
                     <input
@@ -31,7 +31,7 @@
                     />
                 </div>
                 <div class="flex flex-row items-center mb-4">
-                    <label for="email" class="block w-40"
+                    <label for="email" class="block w-60"
                         >フリガナ：</label
                     >
                     <input
@@ -41,7 +41,7 @@
                     />
                 </div>
                 <div class="flex flex-row items-center mb-4">
-                    <label for="email" class="block w-40"
+                    <label for="email" class="block w-60"
                         >郵便番号：</label
                     >
                     <input
@@ -51,7 +51,7 @@
                     />
                 </div>
                 <div class="flex flex-row items-center mb-4">
-                    <label for="email" class="block w-40">住所：</label>
+                    <label for="email" class="block w-60">住所：</label>
                     <input
                         type="text"
                         id="password"
@@ -59,7 +59,7 @@
                     />
                 </div>
                 <div class="flex flex-row items-center mb-4">
-                    <label for="email" class="block w-40"
+                    <label for="email" class="block w-60"
                         >電話番号：</label
                     >
                     <input
@@ -69,7 +69,7 @@
                     />
                 </div>
                 <div class="flex flex-row items-center mb-4">
-                    <label for="email" class="block w-40"
+                    <label for="email" class="block w-60"
                         >メールアドレス：</label
                     >
                     <input
@@ -79,7 +79,7 @@
                     />
                 </div>
                 <div class="flex flex-row items-center mb-4">
-                    <label for="email" class="block w-40"
+                    <label for="email" class="block w-60"
                         >お問合せ内容：</label
                     >
                     <textarea id="content" class="w-full px-3 py-2 border rounded"></textarea>

@@ -3,7 +3,7 @@
     <router-link to="/">
       <svg-icon name="nest-logo" class="sidebar-logo"></svg-icon>
       <transition name="sidebar-logo">
-        <div class="sidebar-logo-text">Nest-Admin</div>
+        <div class="sidebar-logo-text">TAMASAKI</div>
       </transition>
     </router-link>
   </div>
@@ -35,7 +35,6 @@ const props = defineProps({
     display: inline-block;
     vertical-align: middle;
     margin-left: 12px;
-    font-family: 'app-name-font';
     font-size: 24px;
     color: var(--sidebarlogo-text-color);
   }

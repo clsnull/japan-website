@@ -54,7 +54,7 @@
                             06-6568-9876
                         </div>
                     </div>
-                    <div class="w-full mt-2">
+                    <div class="flex flex-col items-center justify-center w-full mt-2">
                         <a href="/contact">
                             <span
                                 class="pointer-events-auto rounded-md bg-sky-600 px-3 py-2 text-[0.8125rem] font-semibold leading-5 text-white hover:bg-sky-500"

@@ -21,6 +21,9 @@ import { OssModule } from './system/oss/oss.module'
 import { DeptModule } from './system/dept/dept.module'
 import { PostModule } from './system/post/post.module'
 import { BannerModule } from './cms/banner/banner.module'
+import { ContactModule } from './cms/contact/contact.module'
+import { NewsModule } from './cms/news/news.module'
+import { CompanyModule } from './cms/company/company.module'
 
 @Module({
   imports: [
@@ -90,6 +93,9 @@ import { BannerModule } from './cms/banner/banner.module'
     OssModule,
     // 业务功能模块
     BannerModule,
+    ContactModule,
+    NewsModule,
+    CompanyModule,
   ],
   // app module 守卫，两个守卫分别依赖 UserService、PermService, 而 UserService、PermService 没有设置全局模块，
   // 所以这俩 守卫 不能再 main.ts 设置全局守卫

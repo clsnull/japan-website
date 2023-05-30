@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-center justify-center bg-gray-100 p-9">
+    <div class="flex justify-center bg-gray-100 p-9" style="min-height: calc(100vh - 5rem - 2.5rem)">
         <div class="p-6 bg-white rounded-lg shadow-md lg:container">
             <div class="pb-8 text-center border-b border-gray-100">
                 <h2 class="mb-2 text-2xl font-bold">
@@ -17,7 +17,7 @@
 export default {
     data() {
         return {
-            content: "内容内容",
+            content: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
         };
     },
 };

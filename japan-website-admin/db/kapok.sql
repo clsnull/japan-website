@@ -353,6 +353,7 @@ CREATE TABLE `cms_contact` (
   `nomen` varchar(255) NOT NULL COMMENT 'フリガナ(氏名)',
   `address` varchar(100) NOT NULL COMMENT '住所',
   `phone` varchar(20) NOT NULL COMMENT '电话番号',
+  `post_code` varchar(20) NOT NULL COMMENT '郵便番号',
   `email` varchar(60) NOT NULL COMMENT 'メールアドレス(邮箱地址)',
   `content` varchar(1024) NOT NULL COMMENT 'お問合せ内容(咨询内容)',
   `create_date` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) COMMENT '创建时间',

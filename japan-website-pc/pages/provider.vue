@@ -15,7 +15,7 @@
                     v-for="(item, index) in provides"
                     :key="index"
                 >
-                    <a :href="item.link || '#'">
+                    <a :href="item.link || '#'" target="__self">
                         <span
                             class="text-gray-600 underline cursor-pointer underline-gray-500 hover:text-black hover:no-underline"
                             >{{ item.name }}</span

@@ -12,15 +12,6 @@
         </div>
         <template #dropdown>
           <el-dropdown-menu>
-            <a target="_blank" href="https://wenqiyun.gitee.io/nest-admin/#/">
-              <el-dropdown-item>文档</el-dropdown-item>
-            </a>
-            <a target="_blank" href="https://github.com/wenqiyun/nest-admin">
-              <el-dropdown-item>GitHub</el-dropdown-item>
-            </a>
-            <a target="_blank" href="https://gitee.com/wenqiyun/nest-admin">
-              <el-dropdown-item>Gitee</el-dropdown-item>
-            </a>
             <el-dropdown-item divided @click="logout">
               <span style="display: block">退出登录</span>
             </el-dropdown-item>

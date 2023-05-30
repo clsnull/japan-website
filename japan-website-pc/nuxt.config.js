@@ -4,15 +4,16 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'japan-website',
+    title: '京都玉崎株式会社',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
+      { hid: 'description', name: 'Description', content: '当社は計測機器、光源装置、産業設備など約1000社のメーカーを取り扱っております。' },
+      { hid: 'Keywords', name: 'Keywords', content: '京都玉崎株式会社,京都玉崎,玉崎,京都,計測機器,光源装置,産業設備,産業設備' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -26,6 +27,7 @@ export default {
   plugins: [
     {
       src: '@/plugins/swiper',
+    }, {
       src: '@/plugins/maps',
     }
   ],
@@ -48,5 +50,8 @@ export default {
   },
   tailwindcss: {
     configPath: '~/tailwind.config.js',
+  },
+  server: {
+    host: '0.0.0.0'
   }
 }
