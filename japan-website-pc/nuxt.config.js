@@ -29,6 +29,8 @@ export default {
       src: '@/plugins/swiper',
     }, {
       src: '@/plugins/maps',
+    }, {
+      src: '@/plugins/axios',
     }
   ],
 
@@ -43,8 +45,20 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios'
   ],
-
+  axios: {
+    baseURL: '/',
+  },
+  proxy: {
+    '/api': {
+      target: 'http://localhost:8081/api',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/api': '/api', // 把 /api 替换成 /
+      }
+    }
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },

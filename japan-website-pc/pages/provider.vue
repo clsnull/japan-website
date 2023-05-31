@@ -1,26 +1,38 @@
 <template>
-    <div
-        class="flex justify-center bg-gray-100 p-9"
-        style="min-height: calc(100vh - 5rem - 2.5rem)"
-    >
-        <div class="p-6 bg-white rounded-lg shadow-md lg:container">
-            <h2
-                class="pb-8 text-2xl font-bold text-center border-b border-gray-100"
-            >
-                主要取扱いメーカー
-            </h2>
-            <div class="flex flex-row flex-wrap mt-3">
-                <div
-                    class="w-1/3 mt-5"
-                    v-for="(item, index) in provides"
-                    :key="index"
+    <div>
+        <div class="relative w-full">
+            <div class="absolute z-10 flex flex-col items-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <h2 class="text-3xl font-bold text-center text-white">主要取扱いメーカー</h2>
+                <div class="p-2 my-4 text-center bg-white bg-opacity-75 w-28 text-sky-600">PRODUCT</div>
+                <div class="mt-8 text-center text-white">
+                    <h2 class="text-xl">当社は計測機器、光源装置、産業設備など約1000社のメーカーを取り扱っております。</h2>
+                </div>
+            </div>
+            <img src="/img/banner8.png" class=" brightness-[75%]" style="width: 100%; height: 100%" />
+        </div>
+        <div
+            class="flex justify-center bg-gray-100 p-9"
+            style="min-height: calc(100vh - 5rem - 2.5rem)"
+        >
+            <div class="p-6 bg-white rounded-lg shadow-md lg:container">
+                <!-- <h2
+                    class="pb-8 mb-5 text-2xl font-bold text-center border-b border-gray-100"
                 >
-                    <a :href="item.link || '#'" target="__self">
-                        <span
-                            class="text-gray-600 underline cursor-pointer underline-gray-500 hover:text-black hover:no-underline"
-                            >{{ item.name }}</span
-                        >
-                    </a>
+                    主要取扱いメーカー
+                </h2> -->
+                <div class="flex flex-row flex-wrap">
+                    <div
+                        class="w-1/3 mb-5"
+                        v-for="(item, index) in provides"
+                        :key="index"
+                    >
+                        <a :href="item.link || '#'" target="__self">
+                            <span
+                                class="text-gray-600 underline cursor-pointer underline-gray-500 hover:text-black hover:no-underline"
+                                >{{ item.name }}</span
+                            >
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

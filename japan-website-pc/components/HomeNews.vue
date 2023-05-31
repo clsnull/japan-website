@@ -40,15 +40,18 @@ export default {
                     title: "LEDライト付ミクロメータスコープ TS-8LENタイプ 株式会社杉藤",
                     date: "2021.01.01",
                     comtent: "",
-                }, {
+                },
+                {
                     title: "ライト＆電池ホルダー付ミクロメータースコープ TS-7LEタイプ 株式会社杉藤 ",
                     date: "2021.01.01",
                     comtent: "",
-                }, {
+                },
+                {
                     title: "LED照明付ポケットズームマイクロスコープ TS-SPタイプ 株式会社杉藤 ",
                     date: "2021.01.01",
                     comtent: "",
-                },{
+                },
+                {
                     title: "センシングヘッド FEM-180S-C 株式会社極東マシーンツール  ",
                     date: "2021.01.01",
                     comtent: "",
@@ -56,5 +59,18 @@ export default {
             ],
         };
     },
+    mounted() {
+        this.init()
+    },
+    methods:{
+        async init(){
+            const params = {
+                page: 1,
+                size: 10
+            }
+            let res = await this.$api.getNewsList({params})
+            console.log(res)
+        }
+    }
 };
 </script>
