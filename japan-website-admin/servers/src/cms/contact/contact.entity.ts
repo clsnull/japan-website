@@ -18,10 +18,10 @@ export class ContactEntity {
   @ApiProperty({ type: String, description: '担当者' })
   @Column({ type: 'varchar', length: 255, comment: '担当者' })
   username: string
-  
+
   @ApiProperty({ description: 'フリガナ(氏名)' })
   @Column({ type: 'varchar', length: 255, comment: 'フリガナ(氏名)' })
-  nomen: string 
+  nomen: string
 
   @ApiProperty({ description: '住所' })
   @Column({ type: 'varchar', length: 100, comment: '住所' })
@@ -34,13 +34,13 @@ export class ContactEntity {
   @ApiProperty({ description: '郵便番号' })
   @Column({ type: 'varchar', length: 20, comment: '郵便番号' })
   postCode: string
-  
+
   @ApiProperty({ description: 'メールアドレス(邮箱地址)' })
   @Column({ type: 'varchar', length: 60, comment: 'メールアドレス(邮箱地址)' })
   email: string
 
   @ApiProperty({ description: 'お問合せ内容(咨询内容)' })
-  @Column({ type: 'varchar', comment: 'お問合せ内容(咨询内容)' })
+  @Column({ type: 'text', length: 0, comment: 'お問合せ内容(咨询内容)' })
   content: string
 
   @ApiProperty({ type: Date, description: '创建时间' })

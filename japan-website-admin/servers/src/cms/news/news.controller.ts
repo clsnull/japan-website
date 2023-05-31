@@ -10,6 +10,7 @@ import { NewsService } from './news.service'
 
 import { CreateNewsDto } from './dto/create-news.dto'
 import { UpdateNewsDto } from './dto/update-news.dto'
+import { AllowAnon } from 'src/common/decorators/allow-anon.decorator'
 
 @ApiTags('news module')
 @ApiBearerAuth()
@@ -35,6 +36,7 @@ export class NewsController {
   @Get('list')
   @ApiOperation({ summary: 'news list' })
   @ApiResult(NewsEntity, true)
+  @AllowAnon()
   async findList(@Query() dto: ReqListQuery): Promise<ResultData> {
     return this.newsService.findList(dto)
   }

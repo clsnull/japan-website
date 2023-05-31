@@ -9,6 +9,7 @@ import { ContactEntity } from './contact.entity'
 import { ContactService } from './contact.service'
 
 import { CreateContactDto } from './dto/create-contact.dto'
+import { AllowAnon } from 'src/common/decorators/allow-anon.decorator'
 
 @ApiTags('联系我们模块')
 @ApiBearerAuth()
@@ -20,6 +21,7 @@ export class ContactController {
   @Post()
   @ApiOperation({ summary: '添加联系信息' })
   @ApiResult(ContactEntity)
+  @AllowAnon()
   async create(@Body() dto: CreateContactDto): Promise<ResultData> {
     return this.contactService.create(dto)
   }

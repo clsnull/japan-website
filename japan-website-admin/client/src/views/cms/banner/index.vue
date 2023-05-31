@@ -2,7 +2,7 @@
   <div class="box-bg-color">
     <div class="filter-container">
       <div class="filter-item">
-        <el-button type="primary" @click="clickAddEvent">添加Banner</el-button>
+        <el-button type="primary" @click="clickAddEvent">create banner</el-button>
       </div>
     </div>
 
@@ -22,10 +22,10 @@
 
       <template #actions="{ row }">
         <el-button type="primary" plain size="small" @click="clickEditEvent(row.id)" v-perm="'perm_users:edit'"
-          >编辑</el-button
+          >update</el-button
         >
         <el-button type="danger" plain size="small" @click="delBtnEvent(row)" v-perm="'perm_users:resetPw'"
-          >删除</el-button
+          >delete</el-button
         >
       </template>
     </k-table>

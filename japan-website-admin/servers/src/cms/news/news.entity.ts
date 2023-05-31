@@ -12,15 +12,15 @@ export class NewsEntity {
   title: string
 
   @ApiProperty({ description: '摘要' })
-  @Column({ type: 'varchar', length: 200, comment: '摘要' })
+  @Column({ type: 'varchar', length: 200, comment: '摘要', default:'' })
   digest: string
 
   @ApiProperty({ description: '内容' })
-  @Column({ type: 'varchar', comment: '内容' })
+  @Column({ type: 'text',length: 0, comment: '内容' })
   content: string
 
   @ApiProperty({ description: '封面图' })
-  @Column({ type: 'varchar', length: 50, comment: '封面图' })
+  @Column({ type: 'varchar', comment: '封面图', default:'' })
   url: string
 
   @ApiProperty({ type: Date, description: '创建时间' })
