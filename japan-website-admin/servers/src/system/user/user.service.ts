@@ -92,9 +92,9 @@ export class UserService {
     } else { // 帐号
       user = await this.findOneByAccount(account)
     }
-    if (!user) return ResultData.fail(AppHttpCode.USER_PASSWORD_INVALID, '帐号或密码错误')
+    if (!user) return ResultData.fail(AppHttpCode.USER_PASSWORD_INVALID, 'Sorry, the account with this keycode was not found.')
     const checkPassword = await compare(password, user.password)
-    if (!checkPassword) return ResultData.fail(AppHttpCode.USER_PASSWORD_INVALID, '帐号或密码错误')
+    if (!checkPassword) return ResultData.fail(AppHttpCode.USER_PASSWORD_INVALID, 'Sorry, the account with this keycode was not found.')
     if (user.status === 0) return ResultData.fail(AppHttpCode.USER_ACCOUNT_FORBIDDEN, '您已被禁用，如需正常使用请联系管理员')
     // 生成 token
     const data = this.genToken({ id: user.id })

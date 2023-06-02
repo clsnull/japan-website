@@ -3,26 +3,26 @@
     <ThemeSwitch class="theme-switch" />
     <div class="login-card">
       <div class="login-title">
-        <div class="nest-logo">
+        <!-- <div class="nest-logo">
           <svg-icon name="nest-logo"></svg-icon>
-        </div>
-        <div>Nest-Admin</div>
+        </div> -->
+        <div>Tamasaki-Admin</div>
       </div>
       <div class="login-content">
         <el-form ref="loginFormRef" :disabled="loading" :model="formData" :rules="loginFormRules">
           <el-form-item prop="account">
-            <el-input v-model.trim="formData.account" size="large" placeholder="帐号/邮箱/手机号"></el-input>
+            <el-input v-model.trim="formData.account" size="large" placeholder="Account"></el-input>
           </el-form-item>
           <el-form-item prop="password">
             <el-input
               type="password"
               size="large"
               v-model="formData.password"
-              placeholder="密码"
+              placeholder="Password"
               @keyup.enter="loginEvent"
             ></el-input>
           </el-form-item>
-          <el-button :loading="loading" type="primary" size="large" @click.prevent="loginEvent"> 登录 </el-button>
+          <el-button :loading="loading" type="primary" size="large" @click.prevent="loginEvent"> Log In </el-button>
         </el-form>
       </div>
     </div>
@@ -43,8 +43,8 @@ const formData = ref({
   password: ''
 })
 const loginFormRules = {
-  account: [{ required: true, message: '请输入帐号/邮箱/手机号', trigger: 'blur' }],
-  password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+  account: [{ required: true, message: 'ACCOUNT CAN NOT NULL', trigger: 'blur' }],
+  password: [{ required: true, message: 'PASSWORD CAN NOT NULL', trigger: 'blur' }]
 }
 const loginFormRef = ref()
 const loading = ref<boolean>(false)
@@ -64,7 +64,7 @@ const loginEvent = () => {
           setToken(data.accessToken, data.refreshToken)
           router.replace((route.query?.redirect || '/') as string)
         } else {
-          ElMessage({ message: res?.msg || '网络异常，请稍后重试', type: 'error' })
+          ElMessage({ message: res?.msg || 'time out again', type: 'error' })
         }
       }
     })

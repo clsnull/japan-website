@@ -87,5 +87,6 @@ export default defineConfig({
       'path-to-regexp',
       'vue-cropper'
     ]
-  }
+  },
+  base: '/admin/'
 })

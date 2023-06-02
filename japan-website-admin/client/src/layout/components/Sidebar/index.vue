@@ -34,7 +34,6 @@ const activeMenu = computed(() => {
   if (meta.activeMenu) return meta.activeMenu
   return path
 })
-
 const isCollapse = computed(() => !appStore.sidebar.opened)
 </script>
 

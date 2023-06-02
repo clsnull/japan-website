@@ -1,14 +1,14 @@
-/**
- * 获取友情链接列表
- */
+
 const getNewsList = {
     url: '/news/list',
     method: 'get',
 }
 
-/**
- * 用户留言
- */
+const getNewsInfo = {
+    url: '/news/{id}',
+    method: 'get',
+}
+
 const contactAdd = {
     url: '/contact',
     method: 'POST'

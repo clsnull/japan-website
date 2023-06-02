@@ -1,40 +1,67 @@
 <template>
     <div>
         <div class="relative w-full">
-            <div class="absolute z-10 flex flex-col items-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                <h2 class="text-3xl font-bold text-center text-white">お知らせ</h2>
-                <div class="p-2 my-4 text-center bg-white bg-opacity-75 w-28 text-sky-600">News</div>
+            <div
+                class="absolute z-10 flex flex-col items-center w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            >
+                <div>
+                    <h2 class="text-3xl font-bold text-center text-white">
+                        お知らせ
+                    </h2>
+                    <div
+                        class="w-full p-2 my-4 tracking-wide text-center rounded-sm bg-white/75 text-sky-600"
+                    >
+                        News
+                    </div>
+                </div>
                 <div class="mt-8 text-center text-white">
                     <!-- <h2 class="text-xl">現状に満足することなく、</h2> -->
                 </div>
             </div>
-            <img src="/img/banner7.png" class=" brightness-[75%]" style="width: 100%; height: 100%" />
+            <img
+                src="/img/banner7.png"
+                class="brightness-[75%] object-cover object-center w-full max-xl:h-72"
+            />
         </div>
         <div
-            class="flex justify-center bg-gray-100 p-9"
+            class="flex justify-center bg-gray-100 max-sm:p-4 p-9"
             style="min-height: calc(100vh - 5rem - 2.5rem)"
         >
-            <div class="p-6 bg-white rounded-lg shadow-md lg:container">
+            <div class="container p-5 bg-white rounded-lg shadow-md">
                 <div class="pb-8 text-center border-b border-gray-100">
                     <h2 class="mb-2 text-2xl font-bold">
-                        アルム株式会社との業務提携契約締結のお知らせ
+                        {{ newsInfo.title }}
                     </h2>
-                    <span class="text-gray-500">2023年03月22日</span>
+                    <span class="text-gray-500">{{
+                        parseTime(newsInfo.createDate)
+                    }}</span>
                 </div>
                 <div>
-                    <div v-html="content"></div>
+                    <div v-html="newsInfo.content"></div>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
+import { parseTime } from "@/utils/index";
 export default {
     data() {
         return {
-            content:
-                "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
+            newsInfo: {},
         };
+    },
+    mounted() {
+        this.init();
+    },
+    methods: {
+        parseTime,
+        async init() {
+            const id = this.$route.query.id;
+            const res = await this.$axios.$get(`/news/${id}`);
+            console.log("res", res);
+            this.newsInfo = res;
+        },
     },
 };
 </script>

@@ -5,22 +5,25 @@
                 class="w-full swiper-slide"
                 v-for="(banner, index) in bannerList"
                 :key="index"
-                style="height: calc(100vh - 5rem)"
             >
                 <div class="relative flex justify-end w-full h-full">
                     <div
-                        class="absolute left-0 z-0 flex flex-col justify-center w-2/5 h-full pl-20 text-3xl italic bg-white bg-opacity-50 "
+                        class="absolute left-0 z-0 flex flex-col justify-center w-2/5 h-full px-20 text-3xl italic bg-white/80 text-sky-700 max-sm:leading-4 max-sm:w-1/2 max-sm:px-4 max-sm:text-[12px] max-xl:text-base max-2xl:px-10"
                     >
-                        <span class="mt-4">あらゆる産業分野で最新製品や</span>
-                        <span class="mt-4">計測機器、産業設備、工業用品</span>
-                        <span class="mt-4"
+                        <span class="mt-4 max-sm:mt-2"
+                            >あらゆる産業分野で最新製品や</span
+                        >
+                        <span class="mt-4 max-sm:mt-2"
+                            >計測機器、産業設備、工業用品</span
+                        >
+                        <span class="mt-4 max-sm:mt-2"
                             >をユーザー様のニーズに融合させた</span
                         >
-                        <span class="mt-4"
+                        <span class="mt-4 max-sm:mt-2"
                             >ベストの答えを創り出す専門総合商社です。</span
                         >
                     </div>
-                    <img :src="banner.img" style="width: 76%; height: 100%" />
+                    <img :src="banner.img" style="width: 76%; height: auto" />
                 </div>
             </div>
         </div>
@@ -65,7 +68,7 @@ export default {
 
 <style scoped>
 .swiper-container {
-    background: url('/img/line1.png') repeat-x left bottom;
+    background: url("/img/line1.png") repeat-x left bottom;
     padding-bottom: 73px;
     position: relative;
 }

@@ -51,6 +51,7 @@ export class NewsController {
   @Get(':id')
   @ApiOperation({ summary: 'find news by id' })
   @ApiResult()
+  @AllowAnon()
   async findOne(@Param('id') id: string): Promise<ResultData> {
     return await this.newsService.findOne(id)
   }

@@ -1,7 +1,7 @@
 import apiEntire from "@/api";
 
 export default ({ app, $axios, store, redirect }, inject) => {
-    $axios.defaults.baseURL = 'http://localhost:8081/api'
+    $axios.defaults.baseURL = 'http://www.tamasaki-group.com/api'
     $axios.defaults.timeout = 5000
 
     $axios.onRequest((config) => {
@@ -9,11 +9,11 @@ export default ({ app, $axios, store, redirect }, inject) => {
     })
 
     $axios.onError((error) => {
-        return error
+        return error.response.data
     })
 
     $axios.onResponse((response) => {
-        return response
+        return response.data
     })
 
     const API = {}

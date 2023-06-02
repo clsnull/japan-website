@@ -1,54 +1,11 @@
 <template>
   <div class="dashboard-container">
-    <div class="grow-card-wrapper">
-      <el-row :gutter="12">
-        <el-col :span="6" :sm="12" :xs="24" :lg="6">
-          <grow-card title="总用户数" icon="user" :count="800000" :increase="2.4" comparison-type="环比"></grow-card>
-        </el-col>
-        <el-col :span="6" :sm="12" :xs="24" :lg="6">
-          <grow-card title="总产品数" icon="product" :count="2000" :increase="3" comparison-type="同比"></grow-card>
-        </el-col>
-        <el-col :span="6" :sm="12" :xs="24" :lg="6">
-          <grow-card title="总营收额" icon="chart-line" :count="3200000" :increase="-2" comparison-type="环比"></grow-card>
-        </el-col>
-        <el-col :span="6" :sm="12" :xs="24" :lg="6">
-          <grow-card title="总任务数" icon="time" :count="10000" :increase="-1" comparison-type="同比"></grow-card>
-        </el-col>
-      </el-row>
-    </div>
-
-    <div>
-      <el-row :gutter="12">
-        <el-col :span="16" :xs="24" :sm="24" :lg="16">
-          <Charts classes="box-bg-color" :options="lineChartOptions" height="400px"></Charts>
-          <div style="margin-top: 12px">
-            <el-row :gutter="12">
-              <el-col :span="12">
-                <Charts classes="box-bg-color" :options="pieOptions" height="280px"></Charts>
-                <!-- <chart-pie v-bind="pieDemoData" height="280px"></chart-pie> -->
-              </el-col>
-              <el-col :span="12">
-                <Charts classes="box-bg-color" :options="barOptions" height="280px"></Charts>
-              </el-col>
-            </el-row>
-          </div>
-        </el-col>
-        <el-col :span="8" :xs="24" :sm="24" :lg="8">
-          <div class="product-demo box-bg-color">
-            <h3 class="product_tip">项目进度</h3>
-            <product-card v-for="product in productionDemoData" v-bind="product" :key="product.guid"></product-card>
-          </div>
-        </el-col>
-      </el-row>
-    </div>
+    <h1>Tamasaki Content Management System</h1>
   </div>
 </template>
 
 <script lang="ts" setup>
-import Charts from '_c/Charts/index.vue'
 
-import GrowCard from './components/GrowCard.vue'
-import ProductCard from './components/ProductCard.vue'
 
 const productionDemoData = [
   {
@@ -57,7 +14,10 @@ const productionDemoData = [
     desc: '开发任务一简介',
     percent: 25,
     updateDate: '2020.06.12',
-    userAvatar: ['https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png', 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png']
+    userAvatar: [
+      'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+      'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
+    ]
   },
   {
     guid: 2,
@@ -171,7 +131,8 @@ const barOptions = {
 
 <style lang="scss" scoped>
 .dashboard-container {
-  padding: 0;
+  background: #fff;
+  padding: 30;
 
   .grow-card-wrapper {
     .grow-card {

@@ -34,7 +34,7 @@ function createService() {
       if (response?.status === 401) {
         if (getRTExp() <= Date.now()) {
           // 刷新token 过期了
-          ElMessageBox.alert('您的登录已过期，点击跳转登录', '提示', {
+          ElMessageBox.alert('登録期限が切れましたので,ログインジャンプをクリックします', '提醒注意', {
             confirmButtonText: 'OK',
             callback: () => {
               clearLocalStorage()
@@ -74,7 +74,7 @@ function createService() {
         }
       } else {
         ElNotification({
-          title: '服务端错误',
+          title: 'Time out',
           dangerouslyUseHTMLString: true,
           message: `<div style="color: var(--el-color-error, red);">${response?.data?.msg || error.message}</div>`,
           position: 'bottom-right',

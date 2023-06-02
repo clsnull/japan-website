@@ -1,5 +1,5 @@
 import { shallowRef } from 'vue'
-import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory, type RouteRecordRaw } from 'vue-router'
 
 import Layout from '../layout/index.vue'
 
@@ -8,7 +8,7 @@ export const constantRoutes: RouteRecordRaw[] = [
     path: '/login',
     name: 'login',
     component: () => import('@/views/login/index.vue'),
-    meta: { title: '登录', hidden: true }
+    meta: { title: 'login', hidden: true }
   }
 ]
 
@@ -17,13 +17,13 @@ export const asyncRoutes: RouteRecordRaw[] = [
   {
     path: '/',
     component: shallowRef(Layout),
-    redirect: '/dashboard',
+    redirect: '/cms/news',
     children: [
       {
         path: '/dashboard',
         name: 'dashboard',
         component: () => import('@/views/dashboard/index.vue'),
-        meta: { title: '首页', icon: 'home' }
+        meta: { title: 'Home', icon: 'home' }
       }
     ]
   },
@@ -32,7 +32,7 @@ export const asyncRoutes: RouteRecordRaw[] = [
     component: shallowRef(Layout),
     name: 'perm',
     redirect: '/perm/users',
-    meta: { title: '权限管理', icon: 'permission' },
+    meta: { title: '权限管理', icon: 'permission', hidden: true },
     children: [
       {
         path: 'users',
@@ -63,7 +63,7 @@ export const asyncRoutes: RouteRecordRaw[] = [
   {
     path: '/system',
     component: shallowRef(Layout),
-    meta: { title: '系统设置', icon: 'system' },
+    meta: { title: '系统设置', icon: 'system', hidden: true },
     name: 'system',
     redirect: '/system/menus',
     children: [
@@ -85,38 +85,38 @@ export const asyncRoutes: RouteRecordRaw[] = [
     path: '/cms',
     component: shallowRef(Layout),
     name: 'cms',
-    redirect: '/cms/banner',
-    meta: { title: '内容管理', icon: 'permission' },
+    redirect: '/cms/news',
+    meta: { title: 'コンテンツ管理', icon: 'system' },
     children: [
       {
         path: 'banner',
         component: () => import('@/views/cms/banner/index.vue'),
         name: 'cms_banner',
-        meta: { title: 'banner' }
-      },
-      {
-        path: 'news',
-        component: () => import('@/views/cms/news/index.vue'),
-        name: 'cms_news',
-        meta: { title: 'news' }
+        meta: { title: 'banner', hidden: true }
       },
       {
         path: 'company',
         component: () => import('@/views/cms/company/index.vue'),
         name: 'cms_company',
-        meta: { title: 'company' }
+        meta: { title: 'company', hidden: true }
+      },
+      {
+        path: 'news',
+        component: () => import('@/views/cms/news/index.vue'),
+        name: 'cms_news',
+        meta: { title: '新着情報' }
       },
       {
         path: 'contact',
         component: () => import('@/views/cms/contact/index.vue'),
         name: 'cms_contact',
-        meta: { title: 'contact' }
+        meta: { title: 'お問い合わせ' }
       }
     ]
   }
 ]
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: constantRoutes
 })
 

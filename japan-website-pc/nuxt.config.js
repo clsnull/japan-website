@@ -52,7 +52,8 @@ export default {
   },
   proxy: {
     '/api': {
-      target: 'http://localhost:8081/api',
+      // target: 'http://localhost:8081/api',
+      target: 'http://www.tamasaki-group.com/api',
       changeOrigin: true,
       pathRewrite: {
         '^/api': '/api', // 把 /api 替换成 /

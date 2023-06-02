@@ -14,15 +14,14 @@
         </div>
       </template>
 
-      <!-- <template #actions="{ row }">
+      <template #actions="{ row }">
         <el-button type="primary" plain size="small" @click="clickEditEvent(row.id)" v-perm="'perm_users:edit'"
-          >编辑</el-button
+          >詳しい情況</el-button
         >
-        <el-button type="danger" plain size="small" @click="delBtnEvent(row)" v-perm="'perm_users:resetPw'"
-          >删除</el-button
-        >
-      </template> -->
+      </template>
     </k-table>
+    <!-- 用户编辑 -->
+    <Edit v-model="showEdit" :curr-id="currId" :role-list="roleList" @change="updateUserSuccess"></Edit>
   </div>
 </template>
 
@@ -36,7 +35,7 @@ import type { ListResultData, Pagination } from '@/api/base'
 
 import { hasPerms } from '@/utils/perm'
 import { useApiLock } from '_hooks'
-import { Row } from 'element-plus/es/components/table-v2/src/components'
+import Edit from './components/Edit.vue'
 
 const tableRef = ref()
 const tableData = ref<IKTableProps<BannerApiResult>>({
@@ -44,7 +43,7 @@ const tableData = ref<IKTableProps<BannerApiResult>>({
   data: { list: [], total: 0 },
   auto: true,
   isPager: true,
-  pageSize: 20,
+  pageSize: 10,
   index: true,
   columns: [
     { label: 'お問合せ製品', prop: 'title', default: '--' },
@@ -62,12 +61,12 @@ const tableData = ref<IKTableProps<BannerApiResult>>({
 
 /* 这里判断是否有整个操作列的权限；如果没有则不显示整列 */
 const hasActionPerm = hasPerms(['perm_users:edit', 'perm_users:updateStatus', 'perm_users:resetPw'])
-hasActionPerm && tableData.value.columns.push({ label: '操作', prop: 'actions', slot: true, width: 240 })
+hasActionPerm && tableData.value.columns.push({ label: '取った', prop: 'actions', slot: true, width: 240 })
 
 const loading = ref<boolean>(false)
 
 // 查询表格事件
-const queryReq = ref<QueryContactList>({ page: 1, size: 20 })
+const queryReq = ref<QueryContactList>({ page: 1, size: 10 })
 
 const getContactListApi = async ({ page, size }: Pagination) => {
   loading.value = true

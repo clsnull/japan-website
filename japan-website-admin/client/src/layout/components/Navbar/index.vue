@@ -13,7 +13,7 @@
         <template #dropdown>
           <el-dropdown-menu>
             <el-dropdown-item divided @click="logout">
-              <span style="display: block">退出登录</span>
+              <span style="display: block">Logout</span>
             </el-dropdown-item>
           </el-dropdown-menu>
         </template>
@@ -45,9 +45,7 @@ const toggleSidebar = () => {
 
 const userStore = useUserStore()
 const logout = () => {
-  ElMessageBox.confirm('是否确认退出当前登录', '提示', {
-    confirmButtonText: '确认',
-    cancelButtonText: '取消',
+  ElMessageBox.confirm('現在のログインをログアウトすることを確認しますか', '注意を促す', {
     type: 'warning'
   }).then(() => {
     clearLocalStorage()

@@ -28,7 +28,7 @@
         </el-table-column>
       </template>
       <template #empty>
-        <el-empty description="暂无数据"></el-empty>
+        <el-empty></el-empty>
       </template>
     </el-table>
 
@@ -118,7 +118,7 @@ export default defineComponent({
     indexMethod: Function,
     indexLabel: {
       type: String,
-      default: '序号'
+      default: '順番'
     }
   },
   inheritAttrs: false,

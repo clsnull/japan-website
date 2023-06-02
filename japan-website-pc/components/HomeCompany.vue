@@ -1,14 +1,16 @@
 <template>
     <div class="text-white bg-gray-800">
         <div
-            class="container flex flex-row items-center px-40 pt-20 pb-10 mx-auto bg-gray-800 border-b border-gray-500"
+            class="container box-border flex flex-row items-center px-40 pt-20 pb-10 mx-auto bg-gray-800 border-b border-gray-500 max-lg:px-0 max-sm:flex-col"
         >
-            <div class="mr-10 text-black bg-white h-80 basis-2/3">
-                <maps></maps>
+            <div class="text-black sm:px-10 h-80 sm:basis-2/3 max-sm:w-full max-sm:px-4">
+                <div class="w-full h-full bg-white">
+                    <maps></maps>
+                </div>
             </div>
-            <div class="basis-2/4">
+            <div class="flex-col basis-2/4 max-sm:mt-5 max-sm:flex max-sm:items-center">
                 <strong class="text-lg">京都玉崎株式会社</strong>
-                <address class="flex flex-col my-4 text-sm">
+                <address class="flex flex-col my-4 text-sm max-sm:items-center">
                     <span>〒550-0013</span>
                     <span>大阪府大阪市西区新町4-2-7 2F</span>
                     <span>TEL：06-6568-9876</span>

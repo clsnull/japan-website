@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    title="Banner"
+    title="新着情報"
     v-model="visible"
     top="10vh"
     width="800px"
@@ -10,19 +10,24 @@
     v-loading="loading"
   >
     <el-form ref="bannerFormRef" :model="newsForm" :rules="newsFormRules" label-position="left" label-width="80px">
-      <el-form-item label="名称" prop="title">
-        <el-input v-model="newsForm.title" placeholder="请输入名称"></el-input>
+      <el-form-item label="標題" prop="title">
+        <el-input v-model="newsForm.title" placeholder="標題"></el-input>
       </el-form-item>
-      <el-form-item label="图片" prop="img">
+      <!--  <el-form-item label="图片" prop="img">
         <single-upload v-model="newsForm.url"></single-upload>
-      </el-form-item>
+      </el-form-item> -->
       <el-form-item label="内容" prop="content">
-        <el-input v-model="newsForm.content" placeholder="请输入内容"></el-input>
+        <el-input
+          v-model="newsForm.content"
+          type="textarea"
+          :autosize="{ minRows: 10, maxRows: 10 }"
+          placeholder="内容"
+        ></el-input>
       </el-form-item>
     </el-form>
     <template #footer>
-      <el-button @click="handleClose">取消</el-button>
-      <el-button type="primary" @click="updateOrCreate">确定</el-button>
+      <el-button @click="handleClose">止めになる</el-button>
+      <el-button type="primary" @click="updateOrCreate">認める</el-button>
     </template>
   </el-dialog>
 </template>

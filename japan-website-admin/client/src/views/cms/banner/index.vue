@@ -45,7 +45,6 @@ import type { ListResultData, Pagination } from '@/api/base'
 import Edit from './components/Edit.vue'
 import { hasPerms } from '@/utils/perm'
 import { useApiLock } from '_hooks'
-import { Row } from 'element-plus/es/components/table-v2/src/components'
 
 const tableRef = ref()
 const tableData = ref<IKTableProps<BannerApiResult>>({
@@ -53,7 +52,7 @@ const tableData = ref<IKTableProps<BannerApiResult>>({
   data: { list: [], total: 0 },
   auto: true,
   isPager: true,
-  pageSize: 20,
+  pageSize: 10,
   index: true,
   columns: [
     { label: '名称', prop: 'name', default: '--' },
@@ -64,12 +63,12 @@ const tableData = ref<IKTableProps<BannerApiResult>>({
 
 /* 这里判断是否有整个操作列的权限；如果没有则不显示整列 */
 const hasActionPerm = hasPerms(['perm_users:edit', 'perm_users:updateStatus', 'perm_users:resetPw'])
-hasActionPerm && tableData.value.columns.push({ label: '操作', prop: 'actions', slot: true, width: 240 })
+hasActionPerm && tableData.value.columns.push({ label: '取った', prop: 'actions', slot: true, width: 240 })
 
 const loading = ref<boolean>(false)
 
 // 查询表格事件
-const queryReq = ref<QueryBannerList>({ page: 1, size: 20 })
+const queryReq = ref<QueryBannerList>({ page: 1, size: 10 })
 
 const getBannerListApi = async ({ page, size }: Pagination) => {
   loading.value = true
