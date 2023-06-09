@@ -38,13 +38,16 @@ export default {
         return {
             bannerList: [
                 {
-                    img: "/img/banner3.png",
+                    img: "/img/banner11.png",
                 },
                 {
-                    img: "/img/banner4.png",
+                    img: "/img/banner12.png",
                 },
                 {
-                    img: "/img/banner5.png",
+                    img: "/img/banner13.png",
+                },
+                {
+                    img: "/img/banner10.png",
                 },
             ],
             swiperOption: {

@@ -40,7 +40,7 @@
                 </div>
             </a>
             <a
-                href="/contact"
+                href="/provider"
                 class="text-white hover:underline"
             >
                 <div

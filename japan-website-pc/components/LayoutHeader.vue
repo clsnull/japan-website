@@ -4,7 +4,7 @@
     >
         <nav class="box-border text-black">
             <div
-                class="container flex items-center justify-between h-20 mx-auto max-sm:px-4"
+                class="flex items-center justify-between h-20 px-20 mx-auto max-2xl:px-10 max-sm:container max-sm:px-4"
             >
                 <a href="/">
                     <div class="flex flex-row items-center justify-center">

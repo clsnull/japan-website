@@ -27,9 +27,12 @@ export default {
   plugins: [
     {
       src: '@/plugins/swiper',
-    }, {
+    },
+    {
       src: '@/plugins/maps',
-    }, {
+      ssr: false
+    },
+    {
       src: '@/plugins/axios',
     }
   ],
@@ -45,7 +48,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
   ],
   axios: {
     baseURL: '/',

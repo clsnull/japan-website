@@ -45,7 +45,9 @@ export default {
                 size: 10
             }
             let res = await this.$api.getNewsList({params})
-            this.newsList = res.data.list
+            this.newsList = res.data.list.sort((a,b)=>{
+                return new Date(b.createDate) - new Date(a.createDate)
+            })
         }
     }
 };
